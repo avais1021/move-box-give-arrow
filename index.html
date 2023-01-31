@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div move on touch</title>
+    <style>
+        .car {
+            width: 50px;
+            height: 100px;
+            background: purple;
+            position: absolute;
+            /* left: 10%;
+            top: 10%; */
+            left: 20px;
+            top: 20px;
+            transition: 0.2s linear;
+        }
+
+        .box-parent {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .box-arrow {
+            width: 100px;
+            height: 100px;
+            background-color: lightseagreen;
+            position: relative;
+        }
+
+        .left {
+            width: 20px;
+            height: 20px;
+            border-top: 10px solid red;
+            border-left: 10px solid red;
+            transform: rotate(-48deg);
+            position: absolute;
+            top: 30%;
+            left: 0;
+        }
+
+        .right {
+            width: 20px;
+            height: 20px;
+            border-top: 10px solid red;
+            border-right: 10px solid red;
+            transform: rotate(48deg);
+            position: absolute;
+            top: 30%;
+            right: 0;
+        }
+
+        .top {
+            width: 20px;
+            height: 20px;
+            border-top: 10px solid red;
+            border-right: 10px solid red;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: -2px;
+            right: 34.7%;
+        }
+
+        .bottom {
+            width: 20px;
+            height: 20px;
+            border-top: 10px solid red;
+            border-right: 10px solid red;
+            transform: rotate(133deg);
+            position: absolute;
+            right: 34.7%;
+            bottom: 4%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="car">
+
+    </div>
+    <div class="box-parent">
+        <div class="box-arrow">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+    </div>
+
+
+    <script>
+        const car = document.querySelector(".car");
+        const left = document.querySelector(".left");
+        const right = document.querySelector(".right");
+        const topArrow = document.querySelector(".top");
+        const bottomArror = document.querySelector(".bottom");
+        // console.log(car)
+
+        let topBottom = 20;
+        let rightLeft =20;
+        right.addEventListener("click", function () {
+            car.style.left =`${rightLeft+=30}px`;
+        })
+
+        left.addEventListener("click", function () {
+            car.style.left =`${rightLeft-=30}px`;
+        })
+
+        topArrow.addEventListener("click" , function(){
+            car.style.top = `${topBottom-=30}px`;
+        })
+
+        bottomArror.addEventListener("click" , function(){
+            car.style.top = `${topBottom+=30}px`;
+        })
+
+
+
+
+
+
+
+
+    </script>
+    <!-- <script src="first.js"></script> -->
+</body>
+
+</html>
